@@ -4,9 +4,16 @@ Install StudioZIO's free macOS audio plug-ins from the command line.
 
 ```sh
 brew tap StudioZIO/studiozio
+brew trust StudioZIO/studiozio
 brew install --cask studiozio-mastering-suite
 brew install --cask studiozio-tempo-delay
 ```
+
+The `brew trust` line is Homebrew's own safeguard for taps outside its
+official repositories: without it Homebrew refuses to run any cask from here.
+It is a one-off, and it applies to this tap alone. If you would rather trust a
+single cask than the whole tap, use
+`brew trust --cask StudioZIO/studiozio/studiozio-mastering-suite`.
 
 Each cask downloads the same signed and notarised `.pkg` published on the
 [releases page](https://github.com/StudioZIO/StudioZIO-Releases), checks it

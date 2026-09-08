@@ -26,9 +26,16 @@ git push -u origin main
 
 ```sh
 brew tap StudioZIO/studiozio
+brew trust StudioZIO/studiozio
 brew info --cask studiozio-mastering-suite
 brew install --cask studiozio-mastering-suite
 ```
+
+`brew trust` satırı Homebrew'un resmî olmayan tap'ler için koyduğu güvenlik
+adımı: onsuz buradaki hiçbir cask çalışmıyor, "Refusing to load cask … from
+untrusted tap" hatası veriyor. Bir kerelik ve sadece bu tap için geçerli.
+Tap'i kullanacak herkesin bu satırı da çalıştırması gerekiyor, o yüzden
+README'de kurulum komutlarının arasında duruyor.
 
 Kurulum şifre soracak — eklentiler `/Library/Audio/Plug-Ins` altına yazdığı için
 normal installer da aynısını soruyor.

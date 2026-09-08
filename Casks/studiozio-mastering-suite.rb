@@ -26,7 +26,7 @@ cask "studiozio-mastering-suite" do
     end
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   pkg "StudioZIO-Mastering-Suite-#{version.csv.first}.pkg"
 

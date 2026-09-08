@@ -16,7 +16,7 @@ cask "studiozio-tempo-delay" do
 
   # The installer declares arm64 only and a 12.0 minimum, so the cask does too;
   # without the arch line Homebrew would offer it to Intel Macs it cannot run on.
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
   depends_on arch: :arm64
 
   pkg "StudioZIOTempoDelay-v#{version}-macOS-arm64.pkg"
