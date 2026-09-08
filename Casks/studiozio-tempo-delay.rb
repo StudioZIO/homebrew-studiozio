@@ -28,4 +28,8 @@ cask "studiozio-tempo-delay" do
     "com.StudioZIO.StudioZIOTempoDelay.component.pkg",
     "com.StudioZIO.StudioZIOTempoDelay.vst3.pkg",
   ]
+
+  # This installer registers no outer product receipt, so the three above are
+  # the whole set. Confirmed against `pkgutil --pkgs` on an installed machine.
+  zap trash: "~/Library/Preferences/StudioZIOTempoDelay.settings"
 end
