@@ -1,11 +1,13 @@
 cask "studiozio-mastering-suite" do
-  # The release tag carries a signing date after the version, so the version
-  # string holds both: version.csv.first is the product version the plug-in
-  # reports, version.csv.second is the date in the tag.
-  version "2.1.1,2026.09.07"
-  sha256 "68e7abb87458bcf8e331f435c7bec7792d33e67fe5c9a5e834195676c11bad7b"
+  # The release tag carries a build label after the version, and that label is
+  # not fixed -- 2.1.1 has shipped as both "-signed-2026.09.07" and
+  # "-flicker-hold-2026.09.08". So the version string holds both parts:
+  # version.csv.first is the version the plug-in reports, version.csv.second is
+  # whatever the tag puts after it.
+  version "2.1.1,flicker-hold-2026.09.08"
+  sha256 "97dcd2f55e317054fd15dbbee098a755623838345fc37cb89b114864d1e3da5d"
 
-  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-signed-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg",
+  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg",
       verified: "github.com/StudioZIO/StudioZIO-Releases/"
   name "StudioZIO Mastering Suite"
   desc "Nine-stage mastering console with always-visible metering"
@@ -13,7 +15,7 @@ cask "studiozio-mastering-suite" do
 
   livecheck do
     url :url
-    regex(/^mastering[._-]suite[._-]v?(\d+(?:\.\d+)+)-signed-([\d.]+)$/i)
+    regex(/^mastering[._-]suite[._-]v?(\d+(?:\.\d+)+)-(.+)$/i)
     strategy :github_releases do |json, regex|
       json.filter_map do |release|
         next if release["draft"] || release["prerelease"]
