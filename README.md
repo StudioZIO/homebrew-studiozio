@@ -59,7 +59,7 @@ each product site. To check by hand:
 
 ```sh
 shasum -a 256 StudioZIO-Mastering-Suite-2.1.1.pkg
-# 97dcd2f55e317054fd15dbbee098a755623838345fc37cb89b114864d1e3da5d
+# 2345deeb3d9cf97e80ca12109de120af9b2896f14799f4e67825e148a1feb7b1
 
 shasum -a 256 StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg
 # adae51020ee920d607f04e15c8db3c044c8dadd7bf3e01762dd56cc1c70072c7

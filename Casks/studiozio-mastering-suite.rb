@@ -5,7 +5,7 @@ cask "studiozio-mastering-suite" do
   # version.csv.first is the version the plug-in reports, version.csv.second is
   # whatever the tag puts after it.
   version "2.1.1,flicker-hold-2026.09.08"
-  sha256 "97dcd2f55e317054fd15dbbee098a755623838345fc37cb89b114864d1e3da5d"
+  sha256 "2345deeb3d9cf97e80ca12109de120af9b2896f14799f4e67825e148a1feb7b1"
 
   url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg",
       verified: "github.com/StudioZIO/StudioZIO-Releases/"
