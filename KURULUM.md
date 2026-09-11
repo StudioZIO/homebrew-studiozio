@@ -68,9 +68,15 @@ ls ~/Library/Preferences | grep -i studiozio
 
 ## Sonraki sürümlerde ne değişecek
 
-Her yeni sürümde cask dosyasında sadece iki satır: `version` ve `sha256`.
-Mastering Suite'te sürüm iki parçalı yazılıyor (`"2.1.1,2026.09.07"`) çünkü
-release etiketi sürümden sonra bir de imza tarihi taşıyor.
+Her yeni sürümde cask dosyasında genellikle sadece iki satır: `version` ve
+`sha256`. Her iki üründe de sürüm iki parçalı yazılıyor
+(`"2.1.1,install-fix-2026.09.11"`, `"4.0.1,aax-2026.09.10"`) çünkü release
+etiketi sürümden sonra bir de yapım etiketi taşıyor.
+
+Format seti değişirse iki satır yetmez: `uninstall pkgutil:` listesini paketin
+kendi `PackageInfo` kimliklerinden okuyup güncelle. Eksik bir makbuz, o formatı
+`brew uninstall` sonrasında diskte bırakır — AAX eklendiğinde her iki cask'te
+de tam olarak bu oldu.
 
 ## Resmî Homebrew listesine ne zaman?
 
