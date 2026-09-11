@@ -4,8 +4,8 @@ cask "studiozio-mastering-suite" do
   # "-flicker-hold-2026.09.08". So the version string holds both parts:
   # version.csv.first is the version the plug-in reports, version.csv.second is
   # whatever the tag puts after it.
-  version "2.1.1,flicker-hold-2026.09.08"
-  sha256 "2345deeb3d9cf97e80ca12109de120af9b2896f14799f4e67825e148a1feb7b1"
+  version "2.1.1,install-fix-2026.09.11"
+  sha256 "b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1"
 
   url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg",
       verified: "github.com/StudioZIO/StudioZIO-Releases/"
@@ -32,14 +32,19 @@ cask "studiozio-mastering-suite" do
 
   pkg "StudioZIO-Mastering-Suite-#{version.csv.first}.pkg"
 
-  # Read from the installer itself, not guessed: the three component packages
-  # install to /Applications, /Library/Audio/Plug-Ins/Components and
-  # /Library/Audio/Plug-Ins/VST3 respectively.
-  # The three component receipts, plus the outer product receipt the installer
+  # Read from the installer itself, not guessed: the four component packages
+  # install to /Applications, /Library/Audio/Plug-Ins/Components,
+  # /Library/Audio/Plug-Ins/VST3 and
+  # /Library/Application Support/Avid/Audio/Plug-Ins respectively.
+  # The four component receipts, plus the outer product receipt the installer
   # registers alongside them -- without that last one an uninstall leaves
   # com.studiozio.masteringsuite.pkg behind in `pkgutil --pkgs`.
+  # AAX joined the package in the 2026.09.10 release; omitting its receipt here
+  # would leave the .aaxplugin installed and still loading in Pro Tools after
+  # `brew uninstall`.
   uninstall pkgutil: [
     "com.studiozio.masteringsuite.pkg",
+    "com.studiozio.masteringsuite.pkg.aax",
     "com.studiozio.masteringsuite.pkg.au",
     "com.studiozio.masteringsuite.pkg.standalone",
     "com.studiozio.masteringsuite.pkg.vst3",

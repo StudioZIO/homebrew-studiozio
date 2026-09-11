@@ -24,12 +24,13 @@ and no email registration at any point.
 
 | Cask | Product | Formats | Requirements |
 |---|---|---|---|
-| `studiozio-mastering-suite` | StudioZIO Mastering Suite 2.1.1 | AU, VST3, Standalone | macOS 11 or newer, Apple Silicon or Intel |
-| `studiozio-tempo-delay` | StudioZIO Tempo Delay 4.0.1 | AU, VST3, Standalone | macOS 12 or newer, Apple Silicon only |
+| `studiozio-mastering-suite` | StudioZIO Mastering Suite 2.1.1 | AU, VST3, AAX, Standalone | macOS 11 or newer, Apple Silicon or Intel |
+| `studiozio-tempo-delay` | StudioZIO Tempo Delay 4.0.1 | AU, VST3, AAX, Standalone | macOS 12 or newer, Apple Silicon only |
 
 Plug-ins install to `/Library/Audio/Plug-Ins/Components` and
-`/Library/Audio/Plug-Ins/VST3`; the standalone applications go to
-`/Applications`. Because the installers write outside your home folder,
+`/Library/Audio/Plug-Ins/VST3`, the AAX plug-ins to
+`/Library/Application Support/Avid/Audio/Plug-Ins`; the standalone
+applications go to `/Applications`. Because the installers write outside your home folder,
 Homebrew will ask for your password, exactly as the installer would.
 
 ## Updating and removing
@@ -59,10 +60,10 @@ each product site. To check by hand:
 
 ```sh
 shasum -a 256 StudioZIO-Mastering-Suite-2.1.1.pkg
-# 2345deeb3d9cf97e80ca12109de120af9b2896f14799f4e67825e148a1feb7b1
+# b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
 
-shasum -a 256 StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg
-# adae51020ee920d607f04e15c8db3c044c8dadd7bf3e01762dd56cc1c70072c7
+shasum -a 256 StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg
+# 4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055
 ```
 
 ## Links
