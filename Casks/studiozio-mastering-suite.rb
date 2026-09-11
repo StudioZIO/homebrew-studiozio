@@ -7,8 +7,7 @@ cask "studiozio-mastering-suite" do
   version "2.1.1,install-fix-2026.09.11"
   sha256 "b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1"
 
-  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg",
-      verified: "github.com/StudioZIO/StudioZIO-Releases/"
+  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/mastering-suite-v#{version.csv.first}-#{version.csv.second}/StudioZIO-Mastering-Suite-#{version.csv.first}.pkg"
   name "StudioZIO Mastering Suite"
   desc "Nine-stage mastering console with always-visible metering"
   homepage "https://studioziomasteringsuite.vercel.app/"
