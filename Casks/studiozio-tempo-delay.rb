@@ -1,13 +1,14 @@
 cask "studiozio-tempo-delay" do
-  # The release tag carries a build label after the version, as the Mastering
-  # Suite cask's does: version.csv.first is the version the plug-in reports,
-  # version.csv.second is whatever the tag puts after it. 4.0.1 first shipped
-  # without AAX and was republished as "-aax-2026.09.10" with the format added,
-  # which is the build the product site and the release truth manifest point at.
-  version "4.0.1,aax-2026.09.10"
-  sha256 "4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055"
+  # The release tag carries a build label after the version: version.csv.first is
+  # the number in the tag and installer file name, version.csv.second is the build
+  # label. For this release the installer is numbered 4.1.0 while the plug-in
+  # itself reports 4.0.1 -- a deliberate split recorded in the release notes.
+  # 16 September's clean-packaging release supersedes "-aax-2026.09.10"; it is the
+  # build the product site, KVR and the release truth manifest point at.
+  version "4.1.0,clean-packaging-2026.09.16"
+  sha256 "fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d"
 
-  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/tempo-delay-v#{version.csv.first}-#{version.csv.second}/StudioZIOTempoDelay-v#{version.csv.first}-macOS-arm64-AAX.pkg"
+  url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/tempo-delay-v#{version.csv.first}-#{version.csv.second}/StudioZIOTempoDelay-v#{version.csv.first}-macOS-arm64.pkg"
   name "StudioZIO Tempo Delay"
   desc "Tempo-synced stereo delay with independent left and right timing"
   homepage "https://www.tempodelay.tech/"
@@ -32,7 +33,7 @@ cask "studiozio-tempo-delay" do
   # without the arch line Homebrew would offer it to Intel Macs it cannot run on.
   depends_on macos: :monterey
 
-  pkg "StudioZIOTempoDelay-v#{version.csv.first}-macOS-arm64-AAX.pkg"
+  pkg "StudioZIOTempoDelay-v#{version.csv.first}-macOS-arm64.pkg"
 
   # Identifiers read from the installer's own PackageInfo files. The mixed case
   # is deliberate -- pkgutil matches these exactly. The AAX receipt belongs
@@ -47,6 +48,7 @@ cask "studiozio-tempo-delay" do
   ]
 
   # This installer registers no outer product receipt, so the four above are
-  # the whole set -- read back from the published 4.0.1 AAX package itself.
+  # the whole set -- read back from the published 4.1.0 clean-packaging package
+  # itself (same four identifiers as the superseded AAX build).
   zap trash: "~/Library/Preferences/StudioZIOTempoDelay.settings"
 end
