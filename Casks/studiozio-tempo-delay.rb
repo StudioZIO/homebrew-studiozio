@@ -4,10 +4,7 @@ cask "studiozio-tempo-delay" do
   # superseded 4.1.0 clean-packaging and 4.0.1 AAX releases carry build labels,
   # so the anchored livecheck pattern below does not match them.
   version "4.0.3"
-  # Filled in from the installer downloaded from the published GitHub release
-  # (release step B7), never from the build machine. Until then the cask refuses
-  # to install: no download can match this value.
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330"
 
   url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/tempo-delay-v#{version}/StudioZIOTempoDelay-v#{version}-macOS-arm64.pkg"
   name "StudioZIO Tempo Delay"

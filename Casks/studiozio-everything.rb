@@ -1,9 +1,6 @@
 cask "studiozio-everything" do
   version "1.0.3"
-  # Filled in from the installer downloaded from the published GitHub release
-  # (release step B7), never from the build machine. Until then the cask refuses
-  # to install: no download can match this value.
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "71b1f432463cc3659d2e810c7300282ac17b391cfd265c8eb461f80af08a1436"
 
   url "https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v#{version}/StudioZIO-Everything-#{version}.pkg"
   name "StudioZIO Everything"
