@@ -31,7 +31,7 @@ and no email registration at any point.
 | Cask | Product | Formats | Requirements |
 |---|---|---|---|
 | `studiozio-mastering-suite` | StudioZIO Mastering Suite 2.1.1 | AU, VST3, AAX, Standalone | macOS 11 or newer, Apple Silicon or Intel |
-| `studiozio-tempo-delay` | StudioZIO Tempo Delay 4.0.1 | AU, VST3, AAX, Standalone | macOS 12 or newer, Apple Silicon only |
+| `studiozio-tempo-delay` | StudioZIO Tempo Delay 4.0.3 | AU, VST3, AAX, Standalone | macOS 12 or newer, Apple Silicon only |
 | `studiozio-inflator` | StudioZIO Inflator 1.0.0 | AU, VST3, AAX, Standalone | macOS 11 or newer, Apple Silicon or Intel |
 | `studiozio-maximizer` | StudioZIO Maximizer 1.0.3 | AU, VST3, AAX, Standalone | macOS 11 or newer, Apple Silicon or Intel |
 | `studiozio-compressor` | StudioZIO Compressor 1.0.0 | AU, VST3, AAX, Standalone | macOS 11 or newer, Apple Silicon or Intel |
@@ -71,8 +71,8 @@ each product page, and every cask file carries its own. To check by hand:
 shasum -a 256 StudioZIO-Mastering-Suite-2.1.1.pkg
 # b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
 
-shasum -a 256 StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
-# fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+shasum -a 256 StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+# 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
 ```
 
 ## Links
